@@ -90,6 +90,10 @@ d3.json("./line.topojson", function(error, data)
           .attr("d", linePath)
           .attr("id", function(d) { return d.id; });
 });
+
+//서울지자체의 정보를 받아와서 맵의 해당 위치에 동그라미를 표시함.
+
+/*
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
@@ -106,6 +110,8 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
+*/
+
 }
 /* ------------------------------------------------------------------------ */
 
