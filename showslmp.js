@@ -109,29 +109,7 @@ d3.csv("placeseoul.csv", function(data)
 }
 /* ------------------------------------------------------------------------ */
 
-$( document ).on( "click", "#reloadMap", function()
-{ mapSvg.selectAll("*").remove();
-  displaySeoulMap();
-});
 
 displaySeoulMap();
-
-$( document )
- .on( "mouseenter", ".placeCircle", function()
-  { placeid = $(this).attr('id')+"name";
-    $(this).css({"fill" : "#ff0000"});
-    $("#"+placeid).css({"display" : "block"}); 
-  })
- .on( "mouseleave", ".placeCircle", function()
-  { placeid = $(this).attr('id')+"name";
-    $(this).css({"fill" : "#ffff00"});
-    $("#"+placeid).css({"display" : "none"}); 
-  })
- .on( "mouseenter", "#seoulMap #line path", function()
-  { $(this).css({"stroke-width" : "6px", "opacity": "1"});
-  })
- .on( "mouseleave", "#seoulMap #line path", function()
-  { $(this).css({"stroke-width" : "2px", "opacity": "0.5"});
-  });
 
 });
