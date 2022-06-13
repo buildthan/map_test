@@ -23,6 +23,15 @@ svg { width: 580px; height: 580px; margin: 0px auto 5px;
 }
 
 
+#river #hanriver { fill: #00ffff; opacity: 0.3;
+}
+#seoulMap #politan path { fill: #ccffff; stroke: #000000; opacity: 0.5;
+}
+#seoulMap #line path { fill: none; stroke: yellow; stroke-width: 2px;
+opacity: 0.5; 
+}
+
+
 
 #mapShow path { fill: #ccffcc; stroke: #0066cc; stroke-width: 0.5px;
 }
