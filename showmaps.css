@@ -26,8 +26,6 @@ svg { width: 580px; height: 580px; margin: 0px auto 5px;
 #seoulMap #line path { fill: none; stroke: yellow; stroke-width: 2px;
 opacity: 0.5; 
 }
-
-
 /* 노선색상 출처 : 위키백과(한국 철도 노선색), 서울도시철도공사, 기타 검색 등등 */
 #seoulMap #line #lineno00,
 #seoulMap #line #lineno01,
@@ -66,7 +64,6 @@ display: none; fill: #000000;
 font-family: "Nanum Gothic"; font-size: 10px; text-anchor: middle; font-weight: bold;
 stroke-width: 0.2px; stroke: #ffff00;
 }
-
 
 #mapShow path { fill: #ccffcc; stroke: #0066cc; stroke-width: 0.5px;
 }
