@@ -8,8 +8,8 @@ path { stroke-linecap:round; stroke-linejoin:round;
 .reloadButton:hover {
  border: solid 1px #f00; color: #fff; background-color: #000066; cursor: pointer;
 }
-svg#legendsForSeoulMap { width: 110px; height: 30px; border: 0; margin: 0; padding: 0;
- position: absolute; top: 20px; left: 465px; border-radius: 10px;
+svg#legendsForSeoulMap { width: 210px; height: 30px; border: 0; margin: 0; padding: 0;
+ position: absolute; top: 25px; left: 365px; border-radius: 10px;
  background: rgba(255, 255, 255, 0.6);
 }
 svg#legendsForSeoulMap text { 
