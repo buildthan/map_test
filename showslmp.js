@@ -122,11 +122,28 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
-}
-/* --
+d3.csv("placeseoul.csv", function(data)
+{ placeMap.selectAll("circle") 
+          .data(data).enter().append("circle") 
+          .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
+          .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
+          .attr("r", 3)
+          .attr("class", "placeCircle")
+          .attr("id", function(d) { return d.seno; });
+  placeMap.selectAll("text")
+          .data(data).enter().append("text")
+          .attr("x", function(d) { return placeProjection([d.longi, d.lati])[0]; })
+          .attr("y", function(d) { return placeProjection([d.longi, d.lati])[1] - 5; })
+          .attr("class", "placeName")
+          .attr("id", function(d) { return d.seno+"name"; })
+          .text(function(d) { return d.name; });
+});
 
 
+
 }
+
+
 /* ------------------------------------------------------------------------ */
 
 
