@@ -138,11 +138,13 @@ displaySeoulMap();
 //placeid는 해당 구 이름
 
 $( document )
+
  .on( "mouseenter", "#mapShow .municipality", function()
   {$(this).css({"fill" : "#ff0000"});
   })
+
  .on( "mouseleave", "#mapShow .municipality", function()
-  {  $(this).css({"fill" : "ccffcc"});
+  {  $(this).css({"fill" : "#ccffcc"});
   })
 
 });
