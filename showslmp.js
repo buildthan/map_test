@@ -62,19 +62,15 @@ placeMap.call(zoom).call(zoom.event);
 // zoom and pan //
 
 
-d3.json("./hanriver.topojson", function(error, data)
-{ var features = topojson.feature(data, data.objects.collection).features;
-  riverMap.selectAll("path")
-          .data(features).enter().append("path")
-          .attr("id", "hanriver")
-          .attr("d", riverPath);
-});
+//서울특별시 주변에 있는 지역들을 대충 시각화 해주는 코드
 
 d3.json("./seoulpolitan.json", function(json)
 { seoulPolitanMap.selectAll("path")
           .data(json.features).enter().append("path")
           .attr("d", seoulPolitanPath);
 });
+
+//아래부터는 서울시 내에 있는 구의 이름을 명시해주는 명령어인듯
 
 d3.json("./seoul.json", function(error, data)
 { var features = topojson.feature(data, data.objects.seoul_municipalities_geo).features;
@@ -89,38 +85,6 @@ d3.json("./seoul.json", function(error, data)
           .attr("class", "municipality-label")
           .text(function(d) { return d.properties.name; });
 });
-
-
-/*
-d3.json("./line.topojson", function(error, data)
-{ var features = topojson.feature(data, data.objects.collection).features;
-  lineMap.selectAll("path")
-          .data(features).enter().append("path")
-          .attr("d", linePath)
-          .attr("id", function(d) { return d.id; });
-});
-*/
-
-//서울지자체의 정보를 받아와서 맵의 해당 위치에 동그라미를 표시함.
-
-/*
-d3.csv("placeseoul.csv", function(data)
-{ placeMap.selectAll("circle") 
-          .data(data).enter().append("circle") 
-          .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
-          .attr("r", 3)
-          .attr("class", "placeCircle")
-          .attr("id", function(d) { return d.seno; });
-  placeMap.selectAll("text")
-          .data(data).enter().append("text")
-          .attr("x", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("y", function(d) { return placeProjection([d.longi, d.lati])[1] - 5; })
-          .attr("class", "placeName")
-          .attr("id", function(d) { return d.seno+"name"; })
-          .text(function(d) { return d.name; });
-});
-*/
 
 }
 /* ------------------------------------------------------------------------ */
