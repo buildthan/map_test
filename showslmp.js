@@ -158,12 +158,12 @@ displaySeoulMap();
 //placeid는 해당 구 이름
 
 $( document )
- .on( "mouseenter", ".municipality c", function()
+ .on( "mouseenter", "#seoulMap", function()
   { placeid = $(this).attr('id')+"name";
     $(this).css({"fill" : "#ff0000"});
     $("#"+placeid).css({"display" : "block"}); 
   })
- .on( "mouseleave", ".municipality c", function()
+ .on( "mouseleave", "#seoulMap", function()
   { placeid = $(this).attr('id')+"name";
     $(this).css({"fill" : "#ffff00"});
     $("#"+placeid).css({"display" : "none"}); 
