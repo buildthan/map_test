@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+
 var placeid = "";
 var seoulMapWidth = 600;
 var seoulMapHeight = 600;
@@ -18,6 +20,8 @@ var placeProjection, placePath, placeMap,
     riverProjection, riverPath, riverMap,
     lineProjection,  linePath,  lineMap;
 var zoom;
+
+
 
 function  displaySeoulMap(){
 seoulPolitanMap = mapSvg.append("g").attr("id", "politan");
@@ -42,6 +46,7 @@ linePath  = d3.geo.path().projection(lineProjection);
 placePath = d3.geo.path().projection(placeProjection);
 
 
+
 // zoom and pan //
 //줌기능탑재
 zoom = d3.behavior.zoom()
@@ -49,12 +54,15 @@ zoom = d3.behavior.zoom()
 	.size([seoulMapWidth, seoulMapHeight])
 	.scaleExtent([1, 10]) /* [0.5, 5] 확대 및 축소 범위 지정 */
     .on("zoom", function()
+
      { riverMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
        seoulPolitanMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
        seoulMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
        lineMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
        placeMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
      });
+
+
 riverMap.call(zoom).call(zoom.event);
 seoulPolitanMap.call(zoom).call(zoom.event);
 seoulMap.call(zoom).call(zoom.event);
@@ -66,6 +74,8 @@ placeMap.call(zoom).call(zoom.event);
 //서울특별시 주변에 있는 지역들을 대충 시각화 해주는 코드
 //딱히 필요없을듯..?
 
+
+
 /*
 
 d3.json("./seoulpolitan.json", function(json)
@@ -76,14 +86,18 @@ d3.json("./seoulpolitan.json", function(json)
 
 */
 
+
+
 //아래부터는 서울시 내에 있는 구의 이름을 명시해주는 명령어인듯
 
 d3.json("./seoul.json", function(error, data)
 { var features = topojson.feature(data, data.objects.seoul_municipalities_geo).features;
+
   seoulMap.selectAll("path")
           .data(features).enter().append("path")
           .attr("class", function(d) { /* console.log(); */ return "municipality c" + d.properties.code })
           .attr("d", seoulPath);
+
   seoulMap.selectAll("text")
           .data(features).enter().append("text")
           .attr("transform", function(d) { return "translate(" + placePath.centroid(d) + ")"; })
@@ -92,12 +106,35 @@ d3.json("./seoul.json", function(error, data)
           .text(function(d) { return d.properties.name; });
 });
 
+
+d3.csv("placeseoul.csv", function(data)
+{ placeMap.selectAll("circle") 
+          .data(data).enter().append("circle") 
+          .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
+          .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
+          .attr("r", 3)
+          .attr("class", "placeCircle")
+          .attr("id", function(d) { return d.seno; });
+  placeMap.selectAll("text")
+          .data(data).enter().append("text")
+          .attr("x", function(d) { return placeProjection([d.longi, d.lati])[0]; })
+          .attr("y", function(d) { return placeProjection([d.longi, d.lati])[1] - 5; })
+          .attr("class", "placeName")
+          .attr("id", function(d) { return d.seno+"name"; })
+          .text(function(d) { return d.name; });
+});
+
+
+
 }
 /* ------------------------------------------------------------------------ */
 
 
 displaySeoulMap();
 
+
+// 특정 점 위에 마우스를 올리고 클릭하면
+//그곳에 대한 정보가 뜸
 $( document )
  .on( "mouseenter", ".placeCircle", function()
   { placeid = $(this).attr('id')+"name";
