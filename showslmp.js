@@ -63,12 +63,17 @@ placeMap.call(zoom).call(zoom.event);
 
 
 //서울특별시 주변에 있는 지역들을 대충 시각화 해주는 코드
+//딱히 필요없을듯..?
+
+/*
 
 d3.json("./seoulpolitan.json", function(json)
 { seoulPolitanMap.selectAll("path")
           .data(json.features).enter().append("path")
           .attr("d", seoulPolitanPath);
 });
+
+*/
 
 //아래부터는 서울시 내에 있는 구의 이름을 명시해주는 명령어인듯
 
