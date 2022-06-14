@@ -177,7 +177,7 @@ $( document )
   for(var i = 0; i < target.length; i++){
     target[i].addEventListener('click', function(){
       targetID = this.getAttribute('href');
-      document.querySelector(targetID).style.display = 'block';
+      document.querySelector('#pop_info_1').style.display = 'block';
     });
   }
   
