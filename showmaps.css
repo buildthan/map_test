@@ -54,7 +54,7 @@ opacity: 0.5;
 #seoulMap #line #lineno20 { stroke: #BB1833; } /* 신분당선 */
 #seoulMap #line #lineno22 { stroke: #FF850D; } /* 의정부 경전철 */
 #seoulMap #line #lineno23 { stroke: #2ABFD0; } /* 경춘선 */
-#mapShow .municipality { fill: #ccffcc; stroke: #333; stroke-width: 1px; fill-opacity: 1; stroke-opacity: 0.5;
+#mapShow .municipality { fill: #ccffcc; stroke: #333; stroke-width: 1px; fill-opacity: 1; stroke-opacity: 0.5; cursor: pointer;
 } /* fill: #99ffcc; fill: #ccffcc; */
 /* #mapShow .municipality:hover { fill: #ffcc00; } */ /* fill: #ffcc00; */
 #mapShow .municipality-label {
@@ -86,3 +86,22 @@ a{text-decoration:none;}
 .pop_wrap{position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,.5); font-size:0; text-align:center;}
 .pop_wrap:after{display:inline-block; height:100%; vertical-align:middle; content:'';}
 .pop_wrap .pop_inner{display:inline-block; padding:20px 30px; background:#fff; width:200px; vertical-align:middle; font-size:15px;}
+
+.imgSelect {
+	cursor: pointer;
+}
+
+.popupLayer {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.popupLayer div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
