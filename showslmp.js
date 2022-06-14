@@ -155,9 +155,14 @@ displaySeoulMap();
 
 //placeid는 해당 구 이름
 
+var target = document.querySelectorAll('municipality c');
+var targetID;
+
+
 $( document )
  .on( "click", "#mapShow .municipality", function()
   {  $(this).css({"fill" : "#FF850D"});
+    document.querySelector('pop_info_1').style.display = 'block';
   })
 
  .on( "mouseenter", "#mapShow .municipality", function()
@@ -168,10 +173,6 @@ $( document )
   {  $(this).css({"fill" : "#ccffcc"});
   })
 
-
-
-  var target = document.querySelectorAll('municipality c');
-  var targetID;
 
   // 팝업 열기
   for(var i = 0; i < target.length; i++){
