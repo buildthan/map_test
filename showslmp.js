@@ -5,6 +5,8 @@ $(document).ready(function(){
 
 var placeid = "";
 
+
+//맵을 만들기 전 구현 1단계 코드
 var seoulMapWidth = 600;
 var seoulMapHeight = 600;
 var initialScale = 65000;
@@ -15,6 +17,8 @@ var initialY = seoulMapHeight/2-30;
 var centerX = 126.9895;
 var centerY = 37.5651;
 
+
+//맵 만들기 전 구현 2단계 코드
 var mapSvg = d3.select("#mapShow").append("svg")
     .attr("width", seoulMapWidth)
     .attr("height", seoulMapHeight)
@@ -32,6 +36,7 @@ var zoom;
 function  displaySeoulMap(){
 seoulPolitanMap = mapSvg.append("g").attr("id", "politan");
 
+//맵 만들기 전 구현 3단계 코드
 seoulMap = mapSvg.append("g").attr("id", "maps");
 riverMap = mapSvg.append("g").attr("id", "river");
 lineMap  = mapSvg.append("g").attr("id", "line");
@@ -117,6 +122,8 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
+/*비상대책용으로 봉인
+
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
@@ -133,6 +140,8 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
+*/
+
 }
 /* --
 
@@ -147,13 +156,14 @@ displaySeoulMap();
 //그곳에 대한 정보가 뜸
 
 //placeid는 해당 구 이름
+
 $( document )
- .on( "mouseenter", ".placeCircle", function()
+ .on( "mouseenter", ".municipality c", function()
   { placeid = $(this).attr('id')+"name";
     $(this).css({"fill" : "#ff0000"});
     $("#"+placeid).css({"display" : "block"}); 
   })
- .on( "mouseleave", ".placeCircle", function()
+ .on( "mouseleave", ".municipality c", function()
   { placeid = $(this).attr('id')+"name";
     $(this).css({"fill" : "#ffff00"});
     $("#"+placeid).css({"display" : "none"}); 
