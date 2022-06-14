@@ -170,7 +170,7 @@ $( document )
 
 
 
-  var target = document.querySelectorAll('mapShow .municipality');
+  var target = document.querySelectorAll('#mapShow .municipality');
   var targetID;
 
   // 팝업 열기
