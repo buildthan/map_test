@@ -166,7 +166,7 @@ var targetID;
 
 
 $( document )
- .on( "click", "#mapShow .municipality", function()
+ .on( "click", "#mapShow .municipality", function(e)
   {  $(this).css({"fill" : "#FF850D"});
     //팝업 기능 잠시 봉인
     //document.querySelector('#pop_info_1').style.display = 'block';
