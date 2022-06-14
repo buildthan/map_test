@@ -122,6 +122,7 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
+/*
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
@@ -138,7 +139,7 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
-
+*/
 
 
 }
@@ -155,6 +156,9 @@ displaySeoulMap();
 //placeid는 해당 구 이름
 
 $( document )
+ .on( "click", "#mapShow .municipality", function()
+  {  $(this).css({"fill" : "#FF850D"});
+  })
 
  .on( "mouseenter", "#mapShow .municipality", function()
   {$(this).css({"fill" : "#ff0000"});
@@ -163,5 +167,25 @@ $( document )
  .on( "mouseleave", "#mapShow .municipality", function()
   {  $(this).css({"fill" : "#ccffcc"});
   })
+
+
+
+  var target = document.querySelectorAll('mapShow .municipality');
+  var targetID;
+
+  // 팝업 열기
+  for(var i = 0; i < target.length; i++){
+    target[i].addEventListener('click', function(){
+      targetID = this.getAttribute('href');
+      document.querySelector(targetID).style.display = 'block';
+    });
+  }
+  
+  // 팝업 닫기
+  for(var j = 0; j < target.length; j++){
+    btnPopClose[j].addEventListener('click', function(){
+      this.parentNode.parentNode.style.display = 'none';
+    });
+}
 
 });
