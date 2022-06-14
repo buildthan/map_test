@@ -163,7 +163,7 @@ var targetID;
 $( document )
  .on( "click", "#mapShow .municipality", function()
   {  $(this).css({"fill" : "#FF850D"});
-    document.querySelector('pop_info_1').style.display = 'block';
+    document.querySelector('#pop_info_1').style.display = 'block';
   })
 
  .on( "mouseenter", "#mapShow .municipality", function()
