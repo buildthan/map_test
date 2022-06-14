@@ -2,18 +2,24 @@ $(document).ready(function(){
 
 
 
+
 var placeid = "";
+
 var seoulMapWidth = 600;
 var seoulMapHeight = 600;
 var initialScale = 65000;
+
 var initialX = seoulMapWidth/2+5;
 var initialY = seoulMapHeight/2-30;
+
 var centerX = 126.9895;
 var centerY = 37.5651;
+
 var mapSvg = d3.select("#mapShow").append("svg")
     .attr("width", seoulMapWidth)
     .attr("height", seoulMapHeight)
     .attr("id", "seoulMap");
+
 var placeProjection, placePath, placeMap,
     seoulProjection, seoulPath, seoulMap,
     seoulPolitanProjection, seoulPolitanPath, seoulPolitanMap,
@@ -25,10 +31,12 @@ var zoom;
 
 function  displaySeoulMap(){
 seoulPolitanMap = mapSvg.append("g").attr("id", "politan");
+
 seoulMap = mapSvg.append("g").attr("id", "maps");
 riverMap = mapSvg.append("g").attr("id", "river");
 lineMap  = mapSvg.append("g").attr("id", "line");
 placeMap = mapSvg.append("g").attr("id", "places");
+
 riverProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
     .translate([initialX, initialY]);
 seoulPolitanProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
@@ -39,6 +47,7 @@ lineProjection  = d3.geo.mercator().center([centerX, centerY]).scale(initialScal
     .translate([initialX, initialY]);
 placeProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
     .translate([initialX, initialY]);
+
 riverPath = d3.geo.path().projection(riverProjection);
 seoulPolitanPath = d3.geo.path().projection(seoulPolitanProjection);
 seoulPath = d3.geo.path().projection(seoulProjection);
@@ -106,13 +115,14 @@ d3.json("./seoul.json", function(error, data)
           .text(function(d) { return d.properties.name; });
 });
 
+//서울 구청 위치 정보 시각화
 
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
           .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
           .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
-          .attr("r", 3)
+          .attr("r", 10)
           .attr("class", "placeCircle")
           .attr("id", function(d) { return d.seno; });
   placeMap.selectAll("text")
@@ -123,7 +133,8 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
-
+}
+/* --
 
 
 }
@@ -132,9 +143,10 @@ d3.csv("placeseoul.csv", function(data)
 
 displaySeoulMap();
 
-
 // 특정 점 위에 마우스를 올리고 클릭하면
 //그곳에 대한 정보가 뜸
+
+//placeid는 해당 구 이름
 $( document )
  .on( "mouseenter", ".placeCircle", function()
   { placeid = $(this).attr('id')+"name";
@@ -146,12 +158,5 @@ $( document )
     $(this).css({"fill" : "#ffff00"});
     $("#"+placeid).css({"display" : "none"}); 
   })
- .on( "mouseenter", "#seoulMap #line path", function()
-  { $(this).css({"stroke-width" : "6px", "opacity": "1"});
-  })
- .on( "mouseleave", "#seoulMap #line path", function()
-  { $(this).css({"stroke-width" : "2px", "opacity": "0.5"});
-  });
-
 
 });
