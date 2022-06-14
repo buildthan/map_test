@@ -43,6 +43,7 @@ placePath = d3.geo.path().projection(placeProjection);
 
 
 // zoom and pan //
+//줌기능탑재
 zoom = d3.behavior.zoom()
 	.center(null) /* zoom에서 center를 지정하지 않으면 즉, 값을 null로 하면 마우스가 있는 곳에서 확대, 축소 함 */
 	.size([seoulMapWidth, seoulMapHeight])
@@ -96,5 +97,24 @@ d3.json("./seoul.json", function(error, data)
 
 
 displaySeoulMap();
+
+$( document )
+ .on( "mouseenter", ".placeCircle", function()
+  { placeid = $(this).attr('id')+"name";
+    $(this).css({"fill" : "#ff0000"});
+    $("#"+placeid).css({"display" : "block"}); 
+  })
+ .on( "mouseleave", ".placeCircle", function()
+  { placeid = $(this).attr('id')+"name";
+    $(this).css({"fill" : "#ffff00"});
+    $("#"+placeid).css({"display" : "none"}); 
+  })
+ .on( "mouseenter", "#seoulMap #line path", function()
+  { $(this).css({"stroke-width" : "6px", "opacity": "1"});
+  })
+ .on( "mouseleave", "#seoulMap #line path", function()
+  { $(this).css({"stroke-width" : "2px", "opacity": "0.5"});
+  });
+
 
 });
