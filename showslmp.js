@@ -122,7 +122,7 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
-
+/*
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
@@ -139,7 +139,7 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
-
+*/
 
 
 }
@@ -177,7 +177,7 @@ $( document )
   for(var i = 0; i < target.length; i++){
     target[i].addEventListener('click', function(){
       targetID = this.getAttribute('href');
-      document.querySelector('#pop_info_1').style.display = 'block';
+      document.querySelector('pop_info_1').style.display = 'block';
     });
   }
   
