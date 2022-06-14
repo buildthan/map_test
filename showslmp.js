@@ -40,6 +40,8 @@ seoulPolitanPath = d3.geo.path().projection(seoulPolitanProjection);
 seoulPath = d3.geo.path().projection(seoulProjection);
 linePath  = d3.geo.path().projection(lineProjection);
 placePath = d3.geo.path().projection(placeProjection);
+
+
 // zoom and pan //
 zoom = d3.behavior.zoom()
 	.center(null) /* zoom에서 center를 지정하지 않으면 즉, 값을 null로 하면 마우스가 있는 곳에서 확대, 축소 함 */
@@ -58,6 +60,8 @@ seoulMap.call(zoom).call(zoom.event);
 lineMap.call(zoom).call(zoom.event);
 placeMap.call(zoom).call(zoom.event);
 // zoom and pan //
+
+
 d3.json("./hanriver.topojson", function(error, data)
 { var features = topojson.feature(data, data.objects.collection).features;
   riverMap.selectAll("path")
@@ -65,11 +69,13 @@ d3.json("./hanriver.topojson", function(error, data)
           .attr("id", "hanriver")
           .attr("d", riverPath);
 });
+
 d3.json("./seoulpolitan.json", function(json)
 { seoulPolitanMap.selectAll("path")
           .data(json.features).enter().append("path")
           .attr("d", seoulPolitanPath);
 });
+
 d3.json("./seoul.json", function(error, data)
 { var features = topojson.feature(data, data.objects.seoul_municipalities_geo).features;
   seoulMap.selectAll("path")
@@ -83,6 +89,9 @@ d3.json("./seoul.json", function(error, data)
           .attr("class", "municipality-label")
           .text(function(d) { return d.properties.name; });
 });
+
+
+/*
 d3.json("./line.topojson", function(error, data)
 { var features = topojson.feature(data, data.objects.collection).features;
   lineMap.selectAll("path")
@@ -90,6 +99,7 @@ d3.json("./line.topojson", function(error, data)
           .attr("d", linePath)
           .attr("id", function(d) { return d.id; });
 });
+*/
 
 //서울지자체의 정보를 받아와서 맵의 해당 위치에 동그라미를 표시함.
 
