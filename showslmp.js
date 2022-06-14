@@ -122,7 +122,6 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
-/*비상대책용으로 봉인
 
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
@@ -140,7 +139,6 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
-*/
 
 }
 /* --
