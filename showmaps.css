@@ -19,8 +19,11 @@ svg#legendsForSeoulMap text {
 svg { width: 580px; height: 580px; margin: 0px auto 5px;
  border: solid 2px #09f; border-radius: 10px;
 }
+
+/*필요없지않나*/
 #river #hanriver { fill: #00ffff; opacity: 0.3;
 }
+
 #seoulMap #politan path { fill: #ccffff; stroke: #000000; opacity: 0.5;
 }
 #seoulMap #line path { fill: none; stroke: yellow; stroke-width: 2px;
@@ -65,7 +68,7 @@ font-family: "Nanum Gothic"; font-size: 10px; text-anchor: middle; font-weight: 
 stroke-width: 0.2px; stroke: #ffff00;
 }
 
-#mapShow path { fill: #ccffcc; stroke: #0066cc; stroke-width: 0.5px;
+#mapShow path { fill: #7b72fd; stroke: #0066cc; stroke-width: 0.5px;
 }
 /* #mapShow path:hover { fill: #ffcc00; } */
 #mapShow text { font-family: "Nanum Gothic"; font-size: 10px; pointer-events: none;
