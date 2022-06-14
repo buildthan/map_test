@@ -104,41 +104,8 @@ d3.json("./seoulpolitan.json", function(json)
 
 //아래부터는 서울시 내에 있는 구의 이름을 명시해주는 명령어인듯
 
-d3.json("./seoul.json", function(error, data)
-{ var features = topojson.feature(data, data.objects.seoul_municipalities_geo).features;
-
-  seoulMap.selectAll("path")
-          .data(features).enter().append("path")
-          .attr("class", function(d) { /* console.log(); */ return "municipality c" + d.properties.code })
-          .attr("d", seoulPath);
-
-  seoulMap.selectAll("text")
-          .data(features).enter().append("text")
-          .attr("transform", function(d) { return "translate(" + placePath.centroid(d) + ")"; })
-          .attr("dy", ".35em")
-          .attr("class", "municipality-label")
-          .text(function(d) { return d.properties.name; });
-});
 
 //서울 구청 위치 정보 시각화
-
-
-d3.csv("placeseoul.csv", function(data)
-{ placeMap.selectAll("circle") 
-          .data(data).enter().append("circle") 
-          .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
-          .attr("r", 10)
-          .attr("class", "placeCircle")
-          .attr("id", function(d) { return d.seno; });
-  placeMap.selectAll("text")
-          .data(data).enter().append("text")
-          .attr("x", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("y", function(d) { return placeProjection([d.longi, d.lati])[1] - 5; })
-          .attr("class", "placeName")
-          .attr("id", function(d) { return d.seno+"name"; })
-          .text(function(d) { return d.name; });
-});
 
 }
 /* --
@@ -160,7 +127,7 @@ $( document )
   {$(this).css({"fill" : "#ff0000"});
   })
  .on( "mouseleave", "#mapShow .municipality", function()
-  {  $(this).css({"fill" : "#ffff00"});
+  {  $(this).css({"fill" : "#ccffcc"});
   })
 
 });
