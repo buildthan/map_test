@@ -64,7 +64,7 @@ placePath = d3.geo.path().projection(placeProjection);
 
 
 
-// zoom and pan //
+
 //줌기능탑재
 zoom = d3.behavior.zoom()
 	.center(null) /* zoom에서 center를 지정하지 않으면 즉, 값을 null로 하면 마우스가 있는 곳에서 확대, 축소 함 */
@@ -88,21 +88,6 @@ placeMap.call(zoom).call(zoom.event);
 // zoom and pan //
 
 
-//서울특별시 주변에 있는 지역들을 대충 시각화 해주는 코드
-//딱히 필요없을듯..?
-
-
-
-/*
-
-d3.json("./seoulpolitan.json", function(json)
-{ seoulPolitanMap.selectAll("path")
-          .data(json.features).enter().append("path")
-          .attr("d", seoulPolitanPath);
-});
-
-*/
-
 
 
 //아래부터는 서울시 내에 있는 구의 이름을 명시해주는 명령어인듯
@@ -123,28 +108,6 @@ d3.json("./seoul.json", function(error, data)
           .text(function(d) { return d.properties.name; });
 });
 
-//서울 구청 위치 정보 시각화
-
-/*
-d3.csv("placeseoul.csv", function(data)
-{ placeMap.selectAll("circle") 
-          .data(data).enter().append("circle") 
-          .attr("cx", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("cy", function(d) { return placeProjection([d.longi, d.lati])[1]; })
-          .attr("r", 3)
-          .attr("class", "placeCircle")
-          .attr("id", function(d) { return d.seno; });
-  placeMap.selectAll("text")
-          .data(data).enter().append("text")
-          .attr("x", function(d) { return placeProjection([d.longi, d.lati])[0]; })
-          .attr("y", function(d) { return placeProjection([d.longi, d.lati])[1] - 5; })
-          .attr("class", "placeName")
-          .attr("id", function(d) { return d.seno+"name"; })
-          .text(function(d) { return d.name; });
-});
-*/
-
-
 }
 
 
@@ -158,10 +121,6 @@ displaySeoulMap();
 
 //placeid는 해당 구 이름
 
-//var target = document.querySelectorAll('#mapShow .municipality');
-var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
-var targetID;
-
 
 $( document )
  .on( "click", "#mapShow .municipality", function(e)
@@ -173,12 +132,6 @@ $( document )
     var tempid = placeid.split(' ');
     placeid = tempid[1];
 
-
-    /*
-    장소 아이디
-    alert(placeid);
-    console.log(placeid);
-    */
 
 		var sWidth = window.innerWidth;
 		var sHeight = window.innerHeight;
@@ -216,24 +169,6 @@ $( document )
  .on( "mouseleave", "#mapShow .municipality", function()
   {  $(this).css({"fill" : "#8ecad1"});
   })
-
-
-  /*
-  // 팝업 열기
-  for(var i = 0; i < target.length; i++){
-    target[i].addEventListener('click', function(){
-      targetID = this.getAttribute('href');
-      document.querySelector('pop_info_1').style.display = 'block';
-    });
-  }
-  
-  // 팝업 닫기
-  for(var j = 0; j < target.length; j++){
-    btnPopClose[j].addEventListener('click', function(){
-      this.parentNode.parentNode.style.display = 'none';
-    });
-  }
-  */
 
 
 
