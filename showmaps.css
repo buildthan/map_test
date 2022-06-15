@@ -501,7 +501,7 @@ a{text-decoration:none;}
 
 /* 분리 */
 
-.c11010 {
+.c110101 {
 	position: absolute;
 	display: none;
 	background-color: #ffffff;
@@ -510,7 +510,7 @@ a{text-decoration:none;}
 	height: 150px;
 	padding: 10px;
 }
-.c11010 div {
+.c110101 div {
 	position: absolute;
 	top: 5px;
 	right: 5px
