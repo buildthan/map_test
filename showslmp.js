@@ -127,7 +127,7 @@ d3.json("./seoul.json", function(error, data)
 
 //서울 구청 위치 정보 시각화
 
-/*
+
 d3.csv("placeseoul.csv", function(data)
 { placeMap.selectAll("circle") 
           .data(data).enter().append("circle") 
@@ -144,7 +144,7 @@ d3.csv("placeseoul.csv", function(data)
           .attr("id", function(d) { return d.seno+"name"; })
           .text(function(d) { return d.name; });
 });
-*/
+
 
 
 }
@@ -182,8 +182,8 @@ $( document )
 		var sWidth = window.innerWidth;
 		var sHeight = window.innerHeight;
 
-		var oWidth = $('.name2').width();
-		var oHeight = $('.name2').height();
+		var oWidth = $('.'+placeid).width();
+		var oHeight = $('.'+placeid).height();
 
 		// 레이어가 나타날 위치를 셋팅한다.
 		var divLeft = e.clientX + 10;
@@ -197,7 +197,7 @@ $( document )
 		if( divLeft < 0 ) divLeft = 0;
 		if( divTop < 0 ) divTop = 0;
 
-		$('.name2').css({
+		$('.'+placeid).css({
 			"top": divTop,
 			"left": divLeft,
 			"position": "absolute"
