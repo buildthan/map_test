@@ -10,8 +10,8 @@ var placeid = "";
 
 
 //맵을 만들기 전 구현 1단계 코드
-var seoulMapWidth = 1200;
-var seoulMapHeight = 1200;
+var seoulMapWidth = 600;
+var seoulMapHeight = 600;
 var initialScale = 65000;
 
 var initialX = seoulMapWidth/2+5;
@@ -210,11 +210,11 @@ $( document )
   })
 
  .on( "mouseenter", "#mapShow .municipality", function()
-  {$(this).css({"fill" : "#ff0000"});
+  {$(this).css({"fill" : "#ffc703"});
   })
 
  .on( "mouseleave", "#mapShow .municipality", function()
-  {  $(this).css({"fill" : "#ccffcc"});
+  {  $(this).css({"fill" : "#8ecad1"});
   })
 
 
