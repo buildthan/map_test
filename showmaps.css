@@ -91,7 +91,7 @@ a{text-decoration:none;}
 	cursor: pointer;
 }
 
-.municipality c11080 {
+.popupLayer {
 	position: absolute;
 	display: none;
 	background-color: #ffffff;
@@ -100,7 +100,7 @@ a{text-decoration:none;}
 	height: 150px;
 	padding: 10px;
 }
-.municipality c11080 div {
+.popupLayer div {
 	position: absolute;
 	top: 5px;
 	right: 5px
