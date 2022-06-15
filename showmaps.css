@@ -91,6 +91,297 @@ a{text-decoration:none;}
 	cursor: pointer;
 }
 
+/*여기서부터 구별 코드 분리 작업 */
+
+.c112501 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112501 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c112401 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112401 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c112301 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112301 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c112201 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112201 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c112101 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112101 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c112001 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c112001 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111901 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111901 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111801 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111801 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111701 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111701 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111601 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111601 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111501 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111501 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111401 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111401 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111301 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111301 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111201 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111201 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111101 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111101 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c111001 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c111001 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110901 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110901 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
 .c110801 {
 	position: absolute;
 	display: none;
@@ -105,3 +396,126 @@ a{text-decoration:none;}
 	top: 5px;
 	right: 5px
 }
+
+/* 분리 */
+
+.c110701 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110701 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110601 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110601 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110501 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110501 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110401 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110401 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110301 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110301  div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c110201 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c110201 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+.c11010 {
+	position: absolute;
+	display: none;
+	background-color: #ffffff;
+	border: solid 2px #d0d0d0;
+	width: 350px;
+	height: 150px;
+	padding: 10px;
+}
+.c11010 div {
+	position: absolute;
+	top: 5px;
+	right: 5px
+}
+
+/* 분리 */
+
+
