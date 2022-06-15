@@ -170,7 +170,10 @@ $( document )
   {  $(this).css({"fill" : "#FF850D"});
     //팝업 기능 잠시 봉인
     //document.querySelector('#pop_info_1').style.display = 'block';
-    placeid = "municipality c" + $(this).attr('class');
+    placeid = $(this).attr('class');
+
+    function alertDialogBox() {
+      alert(placeid);}
 
 		var sWidth = window.innerWidth;
 		var sHeight = window.innerHeight;
