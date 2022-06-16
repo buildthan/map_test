@@ -18,6 +18,7 @@ svg#legendsForSeoulMap text {
 }
 svg { width: 580px; height: 580px; margin: 0px auto 5px;
  border: solid 2px #09f; border-radius: 10px;
+ text-align: center;
 }
 
 
