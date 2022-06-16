@@ -28,38 +28,24 @@ var mapSvg = d3.select("#mapShow").append("svg")
     .attr("id", "seoulMap");
 
 var placeProjection, placePath, placeMap,
-    seoulProjection, seoulPath, seoulMap,
-    seoulPolitanProjection, seoulPolitanPath, seoulPolitanMap,
-    riverProjection, riverPath, riverMap,
-    lineProjection,  linePath,  lineMap;
+    seoulProjection, seoulPath, seoulMap
 var zoom;
 
 
 
 function  displaySeoulMap(){
-seoulPolitanMap = mapSvg.append("g").attr("id", "politan");
 
 //맵 만들기 전 구현 3단계 코드
 seoulMap = mapSvg.append("g").attr("id", "maps");
-riverMap = mapSvg.append("g").attr("id", "river");
-lineMap  = mapSvg.append("g").attr("id", "line");
 placeMap = mapSvg.append("g").attr("id", "places");
 
-riverProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
-    .translate([initialX, initialY]);
-seoulPolitanProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
-    .translate([initialX, initialY]);
 seoulProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
-    .translate([initialX, initialY]);
-lineProjection  = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
     .translate([initialX, initialY]);
 placeProjection = d3.geo.mercator().center([centerX, centerY]).scale(initialScale)
     .translate([initialX, initialY]);
 
-riverPath = d3.geo.path().projection(riverProjection);
-seoulPolitanPath = d3.geo.path().projection(seoulPolitanProjection);
+
 seoulPath = d3.geo.path().projection(seoulProjection);
-linePath  = d3.geo.path().projection(lineProjection);
 placePath = d3.geo.path().projection(placeProjection);
 
 
@@ -72,18 +58,14 @@ zoom = d3.behavior.zoom()
 	.scaleExtent([1, 10]) /* [0.5, 5] 확대 및 축소 범위 지정 */
     .on("zoom", function()
 
-     { riverMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
-       seoulPolitanMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
+     {
        seoulMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
-       lineMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
        placeMap.attr("transform","translate("+ d3.event.translate + ")scale(" + d3.event.scale + ")");
      });
 
 
-riverMap.call(zoom).call(zoom.event);
-seoulPolitanMap.call(zoom).call(zoom.event);
+
 seoulMap.call(zoom).call(zoom.event);
-lineMap.call(zoom).call(zoom.event);
 placeMap.call(zoom).call(zoom.event);
 // zoom and pan //
 
