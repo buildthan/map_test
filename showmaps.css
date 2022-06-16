@@ -9,7 +9,7 @@ path { stroke-linecap:round; stroke-linejoin:round;
  border: solid 1px #f00; color: #fff; background-color: #000066; cursor: pointer;
 }
 svg#legendsForSeoulMap { width: 210px; height: 30px; border: 0; margin: 0; padding: 0;
- position: absolute; top: 25px; left: 365px; border-radius: 10px;
+ position: absolute; top: 25px; left: 465px; border-radius: 10px;
  background: rgba(255, 255, 255, 0.6);
 }
 svg#legendsForSeoulMap text { 
@@ -62,6 +62,9 @@ a{text-decoration:none;}
 .pop_wrap:after{display:inline-block; height:100%; vertical-align:middle; content:'';}
 .pop_wrap .pop_inner{display:inline-block; padding:20px 30px; background:#fff; width:200px; vertical-align:middle; font-size:15px;}
 
+#mapShow {
+	text-align: center;
+}
 
 /*여기서부터 구별 코드 분리 작업 */
 
